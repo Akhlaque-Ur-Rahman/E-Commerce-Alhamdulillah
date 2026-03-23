@@ -1,0 +1,411 @@
+export interface Product {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  originalPrice?: number;
+  discount?: number;
+  rating: number;
+  reviews: number;
+  image: string;
+  images?: string[];
+  description: string;
+  ingredients?: string[];
+  inStock: boolean;
+  isNew?: boolean;
+  isBestSeller?: boolean;
+  isTodaysDeal?: boolean;
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  icon: string;
+  count: number;
+}
+
+export const categories: Category[] = [
+  { id: 'cookies', name: 'Cookies', icon: '🍪', count: 24 },
+  { id: 'biscuits', name: 'Biscuits', icon: '🥠', count: 32 },
+  { id: 'rusk', name: 'Rusk & Nanroti', icon: '🍞', count: 18 },
+  { id: 'cakes', name: 'Cakes', icon: '🎂', count: 15 },
+  { id: 'breads', name: 'Breads', icon: '🥖', count: 20 },
+  { id: 'snacks', name: 'Snacks', icon: '🥨', count: 28 },
+];
+
+export const products: Product[] = [
+  // Cookies
+  {
+    id: '1',
+    name: 'Premium Butter Cookies',
+    category: 'cookies',
+    price: 180,
+    originalPrice: 250,
+    discount: 28,
+    rating: 4.8,
+    reviews: 256,
+    image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500',
+    images: [
+      'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800',
+      'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800',
+      'https://images.unsplash.com/photo-1548848979-47519fe7d70f?w=800',
+    ],
+    description: 'Delicious butter cookies made with premium ingredients. Perfect for tea time and special occasions.',
+    ingredients: ['Refined Flour', 'Butter', 'Sugar', 'Milk', 'Vanilla Essence'],
+    inStock: true,
+    isBestSeller: true,
+    isTodaysDeal: true,
+  },
+  {
+    id: '2',
+    name: 'Chocolate Chip Cookies',
+    category: 'cookies',
+    price: 220,
+    originalPrice: 280,
+    discount: 21,
+    rating: 4.9,
+    reviews: 342,
+    image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=500',
+    images: [
+      'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800',
+      'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800',
+    ],
+    description: 'Rich chocolate chip cookies loaded with premium chocolate chunks.',
+    ingredients: ['Refined Flour', 'Chocolate Chips', 'Butter', 'Brown Sugar', 'Eggs'],
+    inStock: true,
+    isBestSeller: true,
+  },
+  {
+    id: '3',
+    name: 'Coconut Cookies',
+    category: 'cookies',
+    price: 160,
+    rating: 4.6,
+    reviews: 189,
+    image: 'https://images.unsplash.com/photo-1548848979-47519fe7d70f?w=500',
+    images: [
+      'https://images.unsplash.com/photo-1548848979-47519fe7d70f?w=800',
+    ],
+    description: 'Crispy cookies with fresh coconut flakes.',
+    ingredients: ['Refined Flour', 'Coconut', 'Sugar', 'Butter', 'Cardamom'],
+    inStock: true,
+    isNew: true,
+  },
+  {
+    id: '4',
+    name: 'Almond Cookies',
+    category: 'cookies',
+    price: 240,
+    originalPrice: 300,
+    discount: 20,
+    rating: 4.7,
+    reviews: 167,
+    image: 'https://images.unsplash.com/photo-1590080874088-eec64895b423?w=500',
+    description: 'Crunchy almond cookies with real almond pieces.',
+    ingredients: ['Refined Flour', 'Almonds', 'Butter', 'Sugar', 'Vanilla'],
+    inStock: true,
+    isTodaysDeal: true,
+  },
+
+  // Biscuits
+  {
+    id: '5',
+    name: 'Classic Marie Biscuits',
+    category: 'biscuits',
+    price: 40,
+    rating: 4.5,
+    reviews: 521,
+    image: 'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=500',
+    images: [
+      'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=800',
+    ],
+    description: 'Traditional Marie biscuits, perfect for dunking in tea.',
+    ingredients: ['Refined Wheat Flour', 'Sugar', 'Edible Vegetable Oil', 'Milk Solids'],
+    inStock: true,
+    isBestSeller: true,
+  },
+  {
+    id: '6',
+    name: 'Glucose Biscuits',
+    category: 'biscuits',
+    price: 35,
+    rating: 4.4,
+    reviews: 445,
+    image: 'https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=500',
+    description: 'Light and crispy glucose biscuits for instant energy.',
+    ingredients: ['Refined Wheat Flour', 'Glucose Syrup', 'Sugar', 'Vegetable Oil'],
+    inStock: true,
+  },
+  {
+    id: '7',
+    name: 'Cream Biscuits',
+    category: 'biscuits',
+    price: 60,
+    originalPrice: 75,
+    discount: 20,
+    rating: 4.7,
+    reviews: 398,
+    image: 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=500',
+    description: 'Delicious cream-filled biscuits in assorted flavors.',
+    ingredients: ['Refined Flour', 'Sugar', 'Vegetable Oil', 'Cream Filling', 'Vanilla'],
+    inStock: true,
+    isTodaysDeal: true,
+    isBestSeller: true,
+  },
+  {
+    id: '8',
+    name: 'Digestive Biscuits',
+    category: 'biscuits',
+    price: 55,
+    rating: 4.6,
+    reviews: 289,
+    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500',
+    description: 'Healthy digestive biscuits made with whole wheat.',
+    ingredients: ['Whole Wheat Flour', 'Oats', 'Sugar', 'Vegetable Oil', 'Salt'],
+    inStock: true,
+    isNew: true,
+  },
+
+  // Rusk & Nanroti
+  {
+    id: '9',
+    name: 'Premium Milk Rusk',
+    category: 'rusk',
+    price: 80,
+    originalPrice: 100,
+    discount: 20,
+    rating: 4.8,
+    reviews: 412,
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500',
+    images: [
+      'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800',
+    ],
+    description: 'Crispy and crunchy milk rusk, perfect companion for chai.',
+    ingredients: ['Refined Flour', 'Milk', 'Sugar', 'Butter', 'Cardamom'],
+    inStock: true,
+    isBestSeller: true,
+  },
+  {
+    id: '10',
+    name: 'Wheat Rusk',
+    category: 'rusk',
+    price: 70,
+    rating: 4.5,
+    reviews: 276,
+    image: 'https://images.unsplash.com/photo-1585478259715-876acc5be8eb?w=500',
+    description: 'Healthy whole wheat rusk for a nutritious breakfast.',
+    ingredients: ['Whole Wheat Flour', 'Milk', 'Sugar', 'Ghee'],
+    inStock: true,
+  },
+  {
+    id: '11',
+    name: 'Traditional Nanroti',
+    category: 'rusk',
+    price: 65,
+    rating: 4.7,
+    reviews: 198,
+    image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=500',
+    description: 'Traditional crispy nanroti, a Patna specialty.',
+    ingredients: ['Refined Flour', 'Sugar', 'Ghee', 'Fennel Seeds'],
+    inStock: true,
+    isNew: true,
+  },
+
+  // Cakes
+  {
+    id: '12',
+    name: 'Black Forest Cake',
+    category: 'cakes',
+    price: 450,
+    originalPrice: 550,
+    discount: 18,
+    rating: 4.9,
+    reviews: 523,
+    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500',
+    images: [
+      'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800',
+      'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800',
+    ],
+    description: 'Rich chocolate cake layered with cream and cherries.',
+    ingredients: ['Refined Flour', 'Cocoa', 'Eggs', 'Cream', 'Cherries', 'Sugar'],
+    inStock: true,
+    isBestSeller: true,
+    isTodaysDeal: true,
+  },
+  {
+    id: '13',
+    name: 'Vanilla Sponge Cake',
+    category: 'cakes',
+    price: 350,
+    rating: 4.7,
+    reviews: 389,
+    image: 'https://images.unsplash.com/photo-1588195538326-c5b1e5b80d21?w=500',
+    description: 'Light and fluffy vanilla sponge cake.',
+    ingredients: ['Refined Flour', 'Eggs', 'Sugar', 'Butter', 'Vanilla Essence'],
+    inStock: true,
+  },
+  {
+    id: '14',
+    name: 'Red Velvet Cake',
+    category: 'cakes',
+    price: 480,
+    originalPrice: 600,
+    discount: 20,
+    rating: 4.8,
+    reviews: 445,
+    image: 'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=500',
+    description: 'Luxurious red velvet cake with cream cheese frosting.',
+    ingredients: ['Refined Flour', 'Cocoa', 'Buttermilk', 'Cream Cheese', 'Red Food Color'],
+    inStock: true,
+    isBestSeller: true,
+  },
+  {
+    id: '15',
+    name: 'Chocolate Truffle Cake',
+    category: 'cakes',
+    price: 520,
+    rating: 4.9,
+    reviews: 512,
+    image: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=500',
+    description: 'Rich chocolate truffle cake for chocolate lovers.',
+    ingredients: ['Dark Chocolate', 'Refined Flour', 'Eggs', 'Cream', 'Sugar'],
+    inStock: true,
+    isNew: true,
+  },
+
+  // Breads
+  {
+    id: '16',
+    name: 'White Bread Loaf',
+    category: 'breads',
+    price: 40,
+    rating: 4.6,
+    reviews: 678,
+    image: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500',
+    images: [
+      'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=800',
+    ],
+    description: 'Soft and fresh white bread loaf.',
+    ingredients: ['Refined Wheat Flour', 'Yeast', 'Sugar', 'Salt', 'Butter'],
+    inStock: true,
+    isBestSeller: true,
+  },
+  {
+    id: '17',
+    name: 'Brown Bread Loaf',
+    category: 'breads',
+    price: 50,
+    rating: 4.7,
+    reviews: 534,
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500',
+    description: 'Healthy whole wheat brown bread.',
+    ingredients: ['Whole Wheat Flour', 'Yeast', 'Sugar', 'Salt', 'Olive Oil'],
+    inStock: true,
+    isBestSeller: true,
+  },
+  {
+    id: '18',
+    name: 'Multigrain Bread',
+    category: 'breads',
+    price: 65,
+    originalPrice: 80,
+    discount: 19,
+    rating: 4.8,
+    reviews: 423,
+    image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=500',
+    description: 'Nutritious multigrain bread with seeds.',
+    ingredients: ['Wheat', 'Oats', 'Millet', 'Flax Seeds', 'Sunflower Seeds', 'Yeast'],
+    inStock: true,
+    isTodaysDeal: true,
+  },
+  {
+    id: '19',
+    name: 'Garlic Bread',
+    category: 'breads',
+    price: 120,
+    rating: 4.9,
+    reviews: 389,
+    image: 'https://images.unsplash.com/photo-1573140401552-3fab0b24f2e6?w=500',
+    description: 'Aromatic garlic bread with herbs.',
+    ingredients: ['Refined Flour', 'Garlic', 'Butter', 'Herbs', 'Cheese'],
+    inStock: true,
+    isNew: true,
+  },
+
+  // Snacks
+  {
+    id: '20',
+    name: 'Masala Mathri',
+    category: 'snacks',
+    price: 90,
+    originalPrice: 110,
+    discount: 18,
+    rating: 4.7,
+    reviews: 312,
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500',
+    description: 'Crispy and spicy traditional mathri.',
+    ingredients: ['Refined Flour', 'Spices', 'Ghee', 'Carom Seeds', 'Salt'],
+    inStock: true,
+    isBestSeller: true,
+  },
+  {
+    id: '21',
+    name: 'Namak Para',
+    category: 'snacks',
+    price: 80,
+    rating: 4.6,
+    reviews: 267,
+    image: 'https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=500',
+    description: 'Crunchy namak para, perfect tea-time snack.',
+    ingredients: ['Refined Flour', 'Salt', 'Carom Seeds', 'Oil'],
+    inStock: true,
+  },
+  {
+    id: '22',
+    name: 'Sweet Shakarpara',
+    category: 'snacks',
+    price: 95,
+    rating: 4.8,
+    reviews: 298,
+    image: 'https://images.unsplash.com/photo-1628501492904-58b2aa4bc2e0?w=500',
+    description: 'Sweet and crispy shakarpara.',
+    ingredients: ['Refined Flour', 'Sugar', 'Ghee', 'Cardamom'],
+    inStock: true,
+    isTodaysDeal: true,
+  },
+  {
+    id: '23',
+    name: 'Khari Biscuits',
+    category: 'snacks',
+    price: 70,
+    originalPrice: 85,
+    discount: 18,
+    rating: 4.5,
+    reviews: 234,
+    image: 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=500',
+    description: 'Flaky and buttery khari biscuits.',
+    ingredients: ['Refined Flour', 'Butter', 'Salt', 'Baking Powder'],
+    inStock: true,
+  },
+  {
+    id: '24',
+    name: 'Cheese Straws',
+    category: 'snacks',
+    price: 130,
+    rating: 4.7,
+    reviews: 189,
+    image: 'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=500',
+    description: 'Cheesy and crispy cheese straws.',
+    ingredients: ['Refined Flour', 'Cheese', 'Butter', 'Paprika', 'Salt'],
+    inStock: true,
+    isNew: true,
+  },
+];
+
+export const getBestSellers = () => products.filter(p => p.isBestSeller);
+export const getTodaysDeals = () => products.filter(p => p.isTodaysDeal);
+export const getNewArrivals = () => products.filter(p => p.isNew);
+export const getProductsByCategory = (categoryId: string) => 
+  products.filter(p => p.category === categoryId);
+export const getProductById = (id: string) => 
+  products.find(p => p.id === id);
