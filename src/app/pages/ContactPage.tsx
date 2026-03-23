@@ -19,7 +19,7 @@ export const ContactPage: React.FC = () => {
       <section className="bg-primary text-primary-foreground py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-playfair mb-4">Contact Us</h1>
-          <p className="text-xl max-w-2xl mx-auto opacity-90">
+          <p className="text-2xl md:text-3xl max-w-2xl mx-auto opacity-90 font-script">
             We'd love to hear from you
           </p>
         </div>

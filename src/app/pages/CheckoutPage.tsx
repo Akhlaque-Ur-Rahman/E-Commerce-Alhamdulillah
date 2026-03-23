@@ -8,6 +8,7 @@ import { Label } from '../components/ui/label';
 import { Card } from '../components/ui/card';
 import { RadioGroup, RadioGroupItem } from '../components/ui/radio-group';
 import { toast } from 'sonner';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export const CheckoutPage: React.FC = () => {
   const { cart, getCartTotal, clearCart } = useCart();
@@ -185,7 +186,7 @@ export const CheckoutPage: React.FC = () => {
             <div className="space-y-3 mb-6">
               {cart.slice(0, 3).map((item) => (
                 <div key={item.id} className="flex gap-3">
-                  <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded" />
+                  <ImageWithFallback src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded" />
                   <div className="flex-1">
                     <p className="text-sm line-clamp-1">{item.name}</p>
                     <p className="text-sm text-muted-foreground">Qty: {item.quantity}</p>

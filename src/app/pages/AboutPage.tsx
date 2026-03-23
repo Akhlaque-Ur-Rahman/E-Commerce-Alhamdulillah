@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, Heart, Shield, Clock } from 'lucide-react';
 import { Card } from '../components/ui/card';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export const AboutPage: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ export const AboutPage: React.FC = () => {
       <section className="bg-primary text-primary-foreground py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-playfair mb-4">About Alhamdulillah Bakery</h1>
-          <p className="text-xl max-w-2xl mx-auto opacity-90">
+          <p className="text-2xl md:text-3xl max-w-2xl mx-auto opacity-90 font-script">
             Freshly Baked with Love Since 1995
           </p>
         </div>
@@ -19,10 +20,10 @@ export const AboutPage: React.FC = () => {
       <section className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <img
+            <ImageWithFallback
               src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800"
               alt="Bakery"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg w-full object-cover"
             />
           </div>
           <div>

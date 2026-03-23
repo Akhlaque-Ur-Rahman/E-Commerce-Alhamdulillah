@@ -6,6 +6,7 @@ import { useCart } from '../context/CartContext';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { toast } from 'sonner';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export const CartPage: React.FC = () => {
   const { cart, removeFromCart, updateQuantity, getCartTotal, getCartCount } = useCart();
@@ -59,7 +60,7 @@ export const CartPage: React.FC = () => {
                   <div className="flex gap-4">
                     {/* Image */}
                     <Link to={`/product/${item.id}`}>
-                      <img
+                      <ImageWithFallback
                         src={item.image}
                         alt={item.name}
                         className="w-24 h-24 object-cover rounded-lg"

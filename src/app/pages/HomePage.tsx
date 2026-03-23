@@ -6,6 +6,7 @@ import { ProductCard } from '../components/ProductCard';
 import { categories, getBestSellers, getTodaysDeals, getNewArrivals } from '../data/products';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 const heroSlides = [
   {
@@ -39,25 +40,25 @@ const testimonials = [
     name: 'Ayesha Khan',
     rating: 5,
     comment: 'Best bakery in Patna! Their cookies are absolutely delicious.',
-    avatar: 'https://i.pravatar.cc/150?img=1',
+    avatar: 'https://ui-avatars.com/api/?name=Ayesha+Khan&size=150&background=0B3D2E&color=fff',
   },
   {
     name: 'Rahul Sharma',
     rating: 5,
     comment: 'Fresh products delivered on time. Highly recommended!',
-    avatar: 'https://i.pravatar.cc/150?img=12',
+    avatar: 'https://ui-avatars.com/api/?name=Rahul+Sharma&size=150&background=0B3D2E&color=fff',
   },
   {
     name: 'Fatima Ahmed',
     rating: 5,
     comment: 'The cakes are amazing! Perfect for every celebration.',
-    avatar: 'https://i.pravatar.cc/150?img=5',
+    avatar: 'https://ui-avatars.com/api/?name=Fatima+Ahmed&size=150&background=0B3D2E&color=fff',
   },
   {
     name: 'Amit Kumar',
     rating: 5,
     comment: 'Quality products at reasonable prices. Very satisfied!',
-    avatar: 'https://i.pravatar.cc/150?img=13',
+    avatar: 'https://ui-avatars.com/api/?name=Amit+Kumar&size=150&background=0B3D2E&color=fff',
   },
 ];
 
@@ -96,7 +97,7 @@ export const HomePage: React.FC = () => {
             className={`absolute inset-0 bg-gradient-to-r ${heroSlides[currentSlide].bgColor}`}
           >
             <div className="absolute inset-0">
-              <img
+              <ImageWithFallback
                 src={heroSlides[currentSlide].image}
                 alt={heroSlides[currentSlide].title}
                 className="w-full h-full object-cover opacity-30"
@@ -108,7 +109,7 @@ export const HomePage: React.FC = () => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="text-lg mb-2 font-playfair"
+                  className="text-2xl md:text-3xl mb-2 font-script"
                 >
                   {heroSlides[currentSlide].subtitle}
                 </motion.p>

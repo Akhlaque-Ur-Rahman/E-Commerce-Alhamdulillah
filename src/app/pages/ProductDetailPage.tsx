@@ -8,6 +8,7 @@ import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { toast } from 'sonner';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export const ProductDetailPage: React.FC = () => {
   const { productId } = useParams();
@@ -63,14 +64,13 @@ export const ProductDetailPage: React.FC = () => {
         {/* Image Gallery */}
         <div>
           <div className="relative mb-4 rounded-lg overflow-hidden bg-gray-100">
-            <motion.img
-              key={selectedImage}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              src={images[selectedImage]}
-              alt={product.name}
-              className="w-full aspect-square object-cover"
-            />
+            <motion.div key={selectedImage} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+              <ImageWithFallback
+                src={images[selectedImage]}
+                alt={product.name}
+                className="w-full aspect-square object-cover"
+              />
+            </motion.div>
             {product.discount && (
               <Badge className="absolute top-4 left-4 bg-accent text-accent-foreground">
                 {product.discount}% OFF
@@ -89,7 +89,7 @@ export const ProductDetailPage: React.FC = () => {
                     selectedImage === index ? 'border-primary' : 'border-transparent'
                   }`}
                 >
-                  <img src={img} alt={`${product.name} ${index + 1}`} className="w-full aspect-square object-cover" />
+                  <ImageWithFallback src={img} alt={`${product.name} ${index + 1}`} className="w-full aspect-square object-cover" />
                 </button>
               ))}
             </div>
@@ -239,7 +239,7 @@ export const ProductDetailPage: React.FC = () => {
             <div className="border-b pb-6">
               <div className="flex items-center gap-3 mb-3">
                 <img
-                  src="https://i.pravatar.cc/150?img=1"
+                  src="https://ui-avatars.com/api/?name=Ayesha+Khan&size=80&background=e5e7eb&color=374151"
                   alt="User"
                   className="w-10 h-10 rounded-full"
                 />
@@ -261,7 +261,7 @@ export const ProductDetailPage: React.FC = () => {
             <div className="border-b pb-6">
               <div className="flex items-center gap-3 mb-3">
                 <img
-                  src="https://i.pravatar.cc/150?img=12"
+                  src="https://ui-avatars.com/api/?name=Rahul+Sharma&size=80&background=e5e7eb&color=374151"
                   alt="User"
                   className="w-10 h-10 rounded-full"
                 />

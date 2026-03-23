@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { Search, ShoppingCart, Heart, User, Menu, X } from 'lucide-react';
+import logoImage from '@/assets/alhamdulillah_bakery_logo-removebg-preview.png';
 import { useCart } from '../context/CartContext';
 import { products } from '../data/products';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Badge } from './ui/badge';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export const Header: React.FC = () => {
   const { getCartCount, wishlist } = useCart();
@@ -64,14 +66,16 @@ export const Header: React.FC = () => {
             <div className="flex items-center justify-between gap-4">
               {/* Logo */}
               <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                  <span className="text-2xl">🥖</span>
-                </div>
+                <img
+                  src={logoImage}
+                  alt="Alhamdulillah Bakery"
+                  className="h-14 w-14 object-contain shrink-0"
+                />
                 <div className="hidden md:block">
-                  <h1 className="font-playfair text-xl text-primary leading-tight">
-                    ALHAMDULILLAH
+                  <h1 className="font-elegant text-2xl text-primary leading-tight tracking-wide">
+                    Alhamdulillah
                   </h1>
-                  <p className="text-xs text-accent">BAKERY</p>
+                  <p className="font-playfair text-xs tracking-widest uppercase text-accent">Bakery</p>
                 </div>
               </Link>
 
@@ -98,7 +102,7 @@ export const Header: React.FC = () => {
                         onClick={() => handleSearchResultClick(product.id)}
                         className="w-full flex items-center gap-3 p-3 hover:bg-gray-50 transition-colors text-left"
                       >
-                        <img
+                        <ImageWithFallback
                           src={product.image}
                           alt={product.name}
                           className="w-12 h-12 object-cover rounded"

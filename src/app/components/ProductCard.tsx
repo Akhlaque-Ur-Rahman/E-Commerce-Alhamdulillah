@@ -7,6 +7,7 @@ import { useCart } from '../context/CartContext';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { toast } from 'sonner';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 interface ProductCardProps {
   product: Product;
@@ -45,7 +46,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <div className="bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
             {/* Image */}
             <div className="relative aspect-square overflow-hidden bg-gray-100">
-              <img
+              <ImageWithFallback
                 src={product.image}
                 alt={product.name}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -150,10 +151,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           >
             <div className="grid md:grid-cols-2 gap-6 p-6">
               <div>
-                <img
+                <ImageWithFallback
                   src={product.image}
                   alt={product.name}
-                  className="w-full rounded-lg"
+                  className="w-full rounded-lg aspect-square object-cover"
                 />
               </div>
               <div>

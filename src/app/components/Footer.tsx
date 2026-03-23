@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
+import logoImage from '@/assets/alhamdulillah_bakery_logo-removebg-preview.png';
 
 export const Footer: React.FC = () => {
   return (
@@ -11,7 +12,17 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <h3 className="font-playfair text-xl mb-4">ALHAMDULILLAH BAKERY</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <img
+                src={logoImage}
+                alt="Alhamdulillah Bakery"
+                className="h-11 w-11 object-contain shrink-0"
+              />
+              <h3 className="flex flex-wrap items-baseline gap-x-2">
+                <span className="font-elegant text-xl tracking-wide">Alhamdulillah</span>
+                <span className="font-playfair text-sm tracking-widest uppercase opacity-90">Bakery</span>
+              </h3>
+            </div>
             <p className="text-sm opacity-90 mb-4">
               Freshly baked with love, delivering premium quality bakery products since 1995.
               Your trusted bakery in Phulwari Sharif, Patna.
@@ -149,8 +160,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm opacity-90">
           <p>
-            © {new Date().getFullYear()} Alhamdulillah Bakery. All rights reserved. | Designed with
-            ❤️ in Patna
+            © {new Date().getFullYear()} Alhamdulillah Bakery. All rights reserved. | Design with love by EDUNEX
           </p>
         </div>
       </div>
